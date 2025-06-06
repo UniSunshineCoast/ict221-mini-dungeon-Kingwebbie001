@@ -1,9 +1,7 @@
 package dungeon.gui;
 
-import dungeon.engine.GameEngine;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -18,9 +16,10 @@ public class GameGUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         BorderPane root = FXMLLoader.load(getClass().getResource("game_gui.fxml"));
-
-        primaryStage.setScene(new Scene(root, 800, 800));
+        primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("MiniDungeon Game");
+        primaryStage.setFullScreen(true);
+        primaryStage.setFullScreenExitHint("Press ESC to exit fullscreen"); // Optional: custom hint
         primaryStage.show();
     }
 
